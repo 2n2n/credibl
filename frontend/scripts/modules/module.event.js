@@ -53,7 +53,7 @@
 				{ cohost : "Jean Clock", title : "Photobombing", address : "BGC Taguig", event_schedule : "Nov 1, 2016" },
 			];	
 
-			$http.get('http://localhost:8000/api/event')
+			$http.get('https://credibl-a2n2n.c9users.io/api/event')
 			.then(function(res) {
 				$scope.data = res.data;
 			})
