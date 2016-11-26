@@ -3,11 +3,11 @@
 	<header>
 		<!-- <link rel="stylesheet" type="text/css" href="./plugins/bootstrap/css/bootstrap.min.css"> -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
-		<link rel="stylesheet" type="text/css" href="./public/css/homePage.css" />
+		<link rel="stylesheet" type="text/css" href="../public/css/homePage.css" />
 	</header>
-	<body ng-controller="homePageCtrl as main_ctrl">
+	<body ng-controller="homePageCtrl as main_ctrl" style="background: url(../public/images/bg2.jpg); background-size: 100% auto;background-repeat: no-repeat;">
 
-		<div class='top'>
+		<!-- <div class='top'> -->
 			<div class='account'>
 				<div class='logo'><center>logo</center></div>
 				<div class='buttons'>
@@ -17,60 +17,17 @@
 					<label style="color:white;"> Register here</label>
 				</div>
 			</div>
-			<div class='title'>
-				<h2 class='title-hide' style="font-stretch: extra-expanded; font-size: 9vmin; color: rgba(0,0,0,.5);">MAKE YOU DREAMS</h2>
-				<h2 class='title-hide' style="font-stretch: extra-expanded; font-size: 9vmin; color: rgba(0,0,0,.5);">COME TRUE</h2>
-			</div>
-			<div class='searchbox'>
-				<div class='search-option'>
-					<label>Search for what?</label>
-					<span>
-						<input type='radio' name='option' />
-						<label>TALENT</label>
-					</span>
-					<span>
-						<input type='radio' name='option' />
-						<label>EVENT</label>
-					</span>
-				</div>
-				<input type="text" class='search-input' placeholder="SEARCH" style='color:black'/>
-			</div>
-		</div>
-		<div class='bottom'>
-			<div class='search-count'>
-				<div class="search-count-title">
-					<p>SEARCH RESULT:</p>
-				</div>
-			</div>
-		</div>
-		<div class='footer'>
-			<div class='footer-navs'>
-				<div class='footer-left'>
-					<li>
-						<a href="#">HOME</a>
-					</li>
-					<li>
-						<a href="#">ABOUT US</a>
-					</li>
-					<li>
-						<a href="#">CONTACT</a>
-					</li>
-					<li>
-						<a href="#">COPYRIGHT 2016</a>
-					</li>
-				</div>
-				<div class='footer-right'>
-					<li>
-						<a href="#">LANGUAGE</a>
-					</li>
-					<li>
-						<a href="#">TAGALOG</a>
-					</li>
-					<li>
-						<a href="#">ENGLISH</a>
-					</li>
-				</div>
-			</div>
+		<!-- </div> -->
+
+		<div style="width:40%; margin:auto">
+			<h2 style='color:white'>Register</h2>
+			<input type='text' class='form-control' placeholder='Name' /><br/>
+			<input type='text' class='form-control' placeholder='Age' /><br/>
+			<input type='text' class='form-control' placeholder='Email' /><br/>
+			<input type='text' class='form-control' placeholder='Contact' /><br/>
+			<input type='password' class='form-control' placeholder='Password' /><br/>
+			<input type='password' class='form-control' placeholder='Confirm Password' /><br/>
+			<input type='submit' value="submit" class='btn btn-success col-sm-12'/>
 		</div>
 
 		<!--<script src="./plugins/bootstrap/js/bootstrap.min.js"></script>-->
