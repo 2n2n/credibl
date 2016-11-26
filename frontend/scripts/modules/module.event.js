@@ -27,15 +27,36 @@
 		}
 	])
 
-	.controller("eventCtrl", ["eventFct",
-		function(eventFct){
-			this.eventFct = eventFct;
+	.directive('register', ['$http', function($http) {
+		return {
+			scope: {
+				event: '=bindEvt'
+			},
+			templateUrl: '../views/directive/register.html',
+			// template: "<p> <button class='btn btn-warning join mobile' ng-click=popup(this)> Register </button></p>",
+			link: function(scope, el, attrs) {
+				console.log(scope.event.id);
+				var btn = $(el[0]).find('.register').on('click', function(e) {
+					e.preventDefault();
 
+				})
+			}
+		}
+	}])
+	.controller("eventCtrl", ["eventFct", "$scope", "$http",
+		function(eventFct, $scope, $http){
+			this.eventFct = eventFct;
+			$scope.data = {};
 			var array = [
 				{ cohost : "Nuevasys Inc", title : "Dev Con", address : "Makati City", event_schedule : "Nov 1, 2016" },
 				{ cohost : "Leekie Enterprises Inc.", title : "Red Cross Training",  address : "Pasig City", event_schedule : "Nov 1, 2016" },
 				{ cohost : "Jean Clock", title : "Photobombing", address : "BGC Taguig", event_schedule : "Nov 1, 2016" },
-			];
+			];	
+
+			$http.get('http://localhost:8000/api/event')
+			.then(function(res) {
+				$scope.data = res.data;
+			})
 
 			eventFct.eventList = array;
 		}
