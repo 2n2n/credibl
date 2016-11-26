@@ -1,0 +1,36 @@
+<!-- <html ng-app="module.events"> -->
+<html ng-app="moduleEvents">
+	<header>
+		<link rel="stylesheet" type="text/css" href="../plugins/bootstrap/css/bootstrap.min.css">
+	</header>
+	<body ng-controller="eventCtrl as main_ctrl">
+
+		<div class='container-fluid'>
+			<div class='row'>
+				<input type='text' class='form-control'/>
+				<table class='table'>
+					<thead>
+						<tr>
+							<th>Co host</th>
+							<th>Title</th>
+							<th>Address</th>
+							<th>Schedule</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="event in main_ctrl.eventFct.eventList">
+							<td>{{event.cohost}}</td>
+							<td>{{event.title}}</td>
+							<td>{{event.address}}</td>
+							<td>{{event.event_schedule}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<!--<script src="./plugins/bootstrap/js/bootstrap.min.js"></script>-->
+		<script type="text/javascript" src="../plugins/angular/angular.min.js"></script>
+		<script type="text/javascript" src="../scripts/modules/module.event.js"></script>
+	</body>
+</html>
