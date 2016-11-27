@@ -31,14 +31,14 @@ class EventController extends Controller
 
     function attendees($id) 
     {
-        $attendees = Event::where('id');
+        $attendees = Event::find($id);
         if( is_null($attendees) ) 
         {
             return response()->json(['No attendees yet.']);
         }
         else
         {
-            return response()->json(['attendees' => $attendees->get()->toJson()]);
+            return response()->json(['attendees' => $attendees->first()->attendees->toJson()]);
         }
     }
 
