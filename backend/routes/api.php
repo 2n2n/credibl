@@ -35,5 +35,4 @@ Route::get('/event/{id}/attendees', 'EventController@attendees');
 
 Route::post('/event/{id}/complete', 'EventController@complete');
 
-Route::get('/member', 'MemberController@info');
-Route::get('/member/event/id', 'MmeberController@attended');
+Route::get('/member/{id}', 'MemberController@info');
