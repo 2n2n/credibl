@@ -32,9 +32,9 @@ class EventController extends Controller
     function attendees($id) 
     {
         $attendees = Event::where(['id' => $id]);
-        if( is_null($attendees) || is_null($attendees->first()) ) 
+        if( is_null($attendees->first()) ) 
         {
-            return response()->json(['No attendees yet.']);
+            return response()->json({ 'attendees' => [] });
         }
         else
         {
@@ -124,6 +124,13 @@ class EventController extends Controller
 
         return response()->json([ "msg" => 'success' ]); 
         
+    }
+
+    function complete(Request $request, $event_id)
+    {
+        // get post data of participant's contact no. and update status to completed
+        $event = Event::whereIn('id', $event_id);
+        dd($event->get());
     }
 
 }
