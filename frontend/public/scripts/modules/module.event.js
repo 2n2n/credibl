@@ -23,7 +23,7 @@
 					return null;
 				},
 				redirect: function(id){
-					window.location = "http://"+window.location.host+"/views/companyDetails.html?id="+id;
+					window.location = "http://"+window.location.host+"/credibl/frontend/views/companyDetails.html?id="+id;
 				}
 			}
 		}

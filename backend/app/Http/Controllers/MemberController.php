@@ -26,4 +26,10 @@ class MemberController extends Controller
 
     	return response()->json(json_encode($data));
     }
+
+    public function index()
+    {
+    	$member = Member::all();
+    	return response()->json($member->toJson());
+    }
 }
