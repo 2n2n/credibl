@@ -31,7 +31,7 @@ class EventController extends Controller
 
     function attendees($id) 
     {
-        $attendees = MemberEvents::where('id');
+        $attendees = Events::where('id');
         if( is_null($attendees) ) 
         {
             return response()->json(['No attendees yet.']);
