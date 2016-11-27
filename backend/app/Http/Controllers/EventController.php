@@ -38,7 +38,7 @@ class EventController extends Controller
         }
         else
         {
-            return response()->json(['attendees' => $attendees->get()->toJson());
+            return response()->json(['attendees' => $attendees->get()->toJson()]);
         }
     }
 
