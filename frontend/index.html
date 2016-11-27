@@ -14,7 +14,7 @@
 					<label style="color:white;font-weight:100;padding-right:30px"> Not yet a member? </label>
 					<label style="padding-right:10px;color: #02a8fe;font-weight: 100;"> Sign In </label>
 					<br/>
-					<label style="color:white;"> Register here</label>
+					<a href='/views/register.html'><label style="color:white;">Register here</label></a>
 				</div>
 			</div>
 			<div class='title'>
@@ -33,7 +33,7 @@
 						<label>EVENT</label>
 					</span>
 				</div>
-				<input type="text" class='search-input' placeholder="SEARCH" style='color:black'/>
+				<input type="text" class='search-input' ng-model='main_ctrl.homePageFct.searchkey' placeholder="SEARCH" style='color:black' ng-keypress="main_ctrl.homePageFct.search(main_ctrl.homePageFct.searchkey);"/>
 			</div>
 		</div>
 		<div class='bottom'>

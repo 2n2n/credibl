@@ -5,11 +5,36 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" href="../public/css/homePage.css" />
 	</header>
-	<body ng-controller="eventCtrl as main_ctrl" style="background: url(../public/images/bg2.jpg); background-size: 100% auto;background-repeat: no-repeat;">
+	<body ng-controller="eventCtrl as main_ctrl">
 
-		<div style="width:40%; margin:auto">
-			<h2 style='color:white'>Search Events</h2>
-			<input type='text' class='form-control' placeholder='Search eve' /><br/>
+		<div>
+			<img src="{{ event.img }}">
+			<h2>Search Events</h2>
+			<input type='text' class='form-control' placeholder='Search event' /><br/>
+			{{event.title}}
+			<table class='table'>
+				<thead>
+					<tr>
+						<th>image</th>
+						<th>title</th>
+						<th>description</th>
+						<th>address</th>
+						<th>status</th>
+						<th>event schedule</th>
+					<tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat='event in main_ctrl.eventFct.eventList'>
+						<!-- {{event}} -->
+						<td><img src='{{event.img.src}}' width='50' height='50'/></td>
+						<td><a href="#" ng-click='main_ctrl.eventFct.redirect(event.id)'>{{event.title}}</a> <register bind-evt='event'></register></td>
+						<td>{{event.description}}</td>
+						<td>{{event.address}}</td>
+						<td>{{event.status}}</td>
+						<td>{{event.event_schedule}}</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 
 		<!--<script src="./plugins/bootstrap/js/bootstrap.min.js"></script>-->

@@ -22,7 +22,9 @@
 
 					return null;
 				},
-
+				redirect: function(id){
+					window.location = "http://"+window.location.host+"/views/companyDetails.html?id="+id;
+				}
 			}
 		}
 	])
@@ -35,30 +37,45 @@
 			templateUrl: '../views/directive/register.html',
 			// template: "<p> <button class='btn btn-warning join mobile' ng-click=popup(this)> Register </button></p>",
 			link: function(scope, el, attrs) {
-				console.log(scope.event.id);
+				console.log(scope.event.id, '???');
 				var btn = $(el[0]).find('.register').on('click', function(e) {
 					e.preventDefault();
-
 				})
+
+				scope.register_asGuest = function(data){
+					console.log(data)
+					console.log(scope)
+					$http.post("http://credibl-a2n2n.c9users.io/api/event/join/"+scope.event.id, { contact_no : data.contact })
+					.then(function(res){
+						console.log("res:",res);
+					})
+				}
 			}
 		}
 	}])
-	.controller("eventCtrl", ["eventFct", "$scope", "$http",
-		function(eventFct, $scope, $http){
+	.controller("eventCtrl", ["eventFct", "$http",
+		function(eventFct, $http){
 			this.eventFct = eventFct;
-			$scope.data = {};
 			var array = [
-				{ cohost : "Nuevasys Inc", title : "Dev Con", address : "Makati City", event_schedule : "Nov 1, 2016" },
-				{ cohost : "Leekie Enterprises Inc.", title : "Red Cross Training",  address : "Pasig City", event_schedule : "Nov 1, 2016" },
-				{ cohost : "Jean Clock", title : "Photobombing", address : "BGC Taguig", event_schedule : "Nov 1, 2016" },
+				{ src : "http://allvectorlogo.com/img/2016/04/js-logo.png" },
+				{ src : "https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg" },
+				{ src : "https://www.w3.org/html/logo/downloads/HTML5_Logo_512.png" }
 			];	
 
 			$http.get('https://credibl-a2n2n.c9users.io/api/event')
 			.then(function(res) {
-				$scope.data = res.data;
-			})
+				console.log(res.data)
 
-			eventFct.eventList = array;
+				res.data.map(function(row) {
+					var random = Math.floor(Math.random() * 3);
+					console.log(random)
+					row.img = array[random]
+					return row;
+				})
+
+				console.log(res.data)
+				eventFct.eventList = res.data;
+			})
 		}
 	]);
 }());

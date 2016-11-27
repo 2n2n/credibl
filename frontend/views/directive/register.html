@@ -5,14 +5,16 @@
 			<div class="modal-body">
 				<div class="row">
 					<div class="col-md-6">
-						<h1>Register using your contact number</h1>
-						<div class="input-group">
-							<span class="input-group-addon">+63</span>
-							<input type="text" class="form-control" placeholder="9 229 2121 21">
-						</div>
-						<br/>
-						<div class="btn btn-primary" style="float:right">Register</div>	
-						<div class="clearfix"></div>
+						<form>
+							<h1>Register using your contact number</h1>
+							<div class="input-group">
+								<span class="input-group-addon">+63</span>
+								<input type="text" ng-model='formdata.contact' class="form-control" placeholder="9 229 2121 21">
+							</div>
+							<br/>
+							<button type="submit" class="btn btn-primary" style="float:right" ng-click='register_asGuest(formdata)'>Register</button>	
+							<div class="clearfix"></div>
+						</form>
 					</div>
 					<div class="col-md-6">
 						<h1>Already a member?</h1>
