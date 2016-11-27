@@ -1,0 +1,158 @@
+/*body{
+	background:url("../images/bg.jpg");
+}
+
+.topDiv{
+	width: 90%;
+	border: 1px solid;
+	margin: 0 auto 0 auto;
+	overflow: auto;
+}
+
+.logo{
+	float:left;
+}
+
+.buttons{
+	float:right;
+}
+
+.middleDiv{
+	position: relative;
+	border: 1px solid black;
+	height: 40vmin;
+	padding: 29vmin 0px 15vmin 0px;
+}
+
+.searchbar{
+	position: absolute;
+	bottom:0;
+	widthh: 100%;
+}
+
+.searchbar-container-text{
+	width: 100%;
+}
+
+.searchbar-text{
+	width:80%;
+}
+
+.bottom{
+	width: 100%;
+	border: 1px solid black;
+}*/
+
+@media screen and (max-width: 600px) {
+  .title-hide {
+    display: none;
+  }
+}
+
+.top{
+	width: 100%;
+	height: 60vmin;
+    background: url(../images/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.logo{
+	float:left;
+}
+
+.buttons{
+	float:right;
+}
+
+.account{
+	width: 100%;
+    height: 90px;
+    background: linear-gradient(rgba(0,0,0,0.7) 0%, rgba(0,0,0,.01));
+    padding: 15px 50px 0px 50px;
+}
+
+.title{
+	padding-left: 50px;
+}
+
+.searchbox{
+	width: 80%;
+    height: 60px;
+    margin: auto;
+}
+
+.search-option{
+	color:white;
+	margin-bottom:5px;
+}
+
+.search-option label{
+	font-weight:100;
+}
+
+.search-input{
+	border: 1px solid rgba(0,0,0,0);
+    background: rgba(255,255,255,.7);
+    width: 100%;
+    height: 40px;
+}
+
+.bottom{
+	width: 100%;
+	min-height:200px;
+	position: relative;
+	top:-35px;
+}
+
+.search-count{
+	width: 100%;
+	height: 35px;
+	background: rgba(0,0,0,.5);
+	padding: 5px;
+}
+
+.search-count-title{
+	width: 80%;
+	margin: auto;
+	color:rgba(255,255,255,.5);
+}
+
+.footer{
+	position: absolute;
+	bottom: 0;
+	height:50px;
+	background: black;
+	width:100%;
+}
+
+.footer-navs{
+	width: 90%;
+	margin:auto;
+	padding-top:13px;
+}
+
+.footer-left{
+	float: left;
+}
+
+.footer-right{
+	float:right;
+}
+
+.footer-navs li{
+	list-style: none;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.footer-navs a{
+	color: white;
+}
+
+.logo{
+	background: white;
+    border-radius: 30px;
+    width: 50px;
+    height: 50px;
+}

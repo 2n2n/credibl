@@ -1,11 +1,84 @@
-<html ng-app="appClient">
+<!DOCTYPE html>
+<html ng-app="homePage">
 	<header>
-		<link rel="stylesheet" type="text/css" href="./plugins/bootstrap/css/bootstrap.min.css">
+		<!-- <link rel="stylesheet" type="text/css" href="./plugins/bootstrap/css/bootstrap.min.css"> -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="./public/css/homePage.css" />
 	</header>
-	<body ng-controller="mainController as main_ctrl">
+	<body ng-controller="homePageCtrl as main_ctrl">
+
+		<div class='top'>
+			<div class='account'>
+				<div class='logo'><center>logo</center></div>
+				<div class='buttons'>
+					<label style="color:white;font-weight:100;padding-right:30px"> Not yet a member? </label>
+					<label style="padding-right:10px;color: #02a8fe;font-weight: 100;"> Sign In </label>
+					<br/>
+					<label style="color:white;"> Register here</label>
+				</div>
+			</div>
+			<div class='title'>
+				<h2 class='title-hide' style="font-stretch: extra-expanded; font-size: 9vmin; color: rgba(0,0,0,.5);">MAKE YOU DREAMS</h2>
+				<h2 class='title-hide' style="font-stretch: extra-expanded; font-size: 9vmin; color: rgba(0,0,0,.5);">COME TRUE</h2>
+			</div>
+			<div class='searchbox'>
+				<div class='search-option'>
+					<label>Search for what?</label>
+					<span>
+						<input type='radio' name='option' />
+						<label>TALENT</label>
+					</span>
+					<span>
+						<input type='radio' name='option' />
+						<label>EVENT</label>
+					</span>
+				</div>
+				<input type="text" class='search-input' placeholder="SEARCH" style='color:black'/>
+			</div>
+		</div>
+		<div class='bottom'>
+			<div class='search-count'>
+				<div class="search-count-title">
+					<p>SEARCH RESULT:</p>
+				</div>
+			</div>
+		</div>
+		<div class='footer'>
+			<div class='footer-navs'>
+				<div class='footer-left'>
+					<li>
+						<a href="#">HOME</a>
+					</li>
+					<li>
+						<a href="#">ABOUT US</a>
+					</li>
+					<li>
+						<a href="#">CONTACT</a>
+					</li>
+					<li>
+						<a href="#">COPYRIGHT 2016</a>
+					</li>
+				</div>
+				<div class='footer-right'>
+					<li>
+						<a href="#">LANGUAGE</a>
+					</li>
+					<li>
+						<a href="#">TAGALOG</a>
+					</li>
+					<li>
+						<a href="#">ENGLISH</a>
+					</li>
+				</div>
+			</div>
+		</div>
 
 		<!--<script src="./plugins/bootstrap/js/bootstrap.min.js"></script>-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="./plugins/angular/angular.min.js"></script>
-		<script type="text/javascript" src="./scripts/modules/module.event.js"></script>
+
+		<script type="text/javascript" src="./public/scripts/homePage.js"></script>
 	</body>
 </html>

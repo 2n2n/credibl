@@ -1,7 +1,7 @@
 (function(){
 	"use strict";
 
-	angular.module("moduleEvents", [])
+	angular.module("module.event", [])
 
 	.factory("eventFct", [
 		function(){
