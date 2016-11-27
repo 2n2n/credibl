@@ -13,4 +13,5 @@ class MemberEvents extends Model
     {
     	return $this->belongsTo('App\Event');
     }
+
 }

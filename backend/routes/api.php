@@ -32,3 +32,7 @@ Route::resource('/event', 'EventController', ['except' => ['create', 'edit'] ]);
 
 Route::post('/event/join/{event_id}', 'EventController@joinEvent');
 Route::get('/event/{id}/attendees', 'EventController@attendees');
+
+Route::post('/event/{id}/complete', 'EventController@complete');
+
+Route::get('/member/{id}', 'MemberController@info');
