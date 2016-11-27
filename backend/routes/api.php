@@ -30,5 +30,5 @@ Route::get('/user', function (Request $request) {
 
 Route::resource('/event', 'EventController', ['except' => ['create', 'edit'] ]);
 
-
+Route::post('/event/join/{event_id}', 'EventController@joinEvent');
 

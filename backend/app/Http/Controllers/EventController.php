@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\Event;
+use App\MemberEvents;
+
 use Validator;
 use Carbon\Carbon;
 
@@ -14,6 +16,7 @@ class EventController extends Controller
     function index() 
     {
     	$events = Event::all();
+
     	if( $events->count() == 0 ) 
     	{ 
     		$events = 'no events yet.'; 
@@ -24,6 +27,19 @@ class EventController extends Controller
     	}
 
     	return response()->json($events);
+    }
+
+    function attendees($id) 
+    {
+        $attendees = MemberEvents::where('id');
+        if( is_null($attendees) ) 
+        {
+            return response()->json(['No attendees yet.']);
+        }
+        else
+        {
+            return response()->json(['attendees' => $attendees->get()->toJson());
+        }
     }
 
     function store(Request $request) 
@@ -71,11 +87,43 @@ class EventController extends Controller
     	}
 
     	$postdata = $request->all();
-    	dd($postdata);
+    	
+        return response()->json($event->toArray());
 
     }
 
     // cancel event
-    function destroy() {}
+    function destroy(Request $request, $event_id) 
+    {
+        $event = Event::find($id);
+        if(is_null($event))
+        {
+            return response()->json(['Event does\'nt exist.']);
+        }
+
+        $event->status = $request->get('status');
+        $event->save();
+
+        return response()->json([ 'msg' => 'Successfully '. $request->get('status') ]);
+    }
+
+    function joinEvent(Request $request, $event_id) 
+    {
+
+        // request should have a contact number;
+        $contact = $request->get('contact_no');
+
+        $registree = MemberEvents::where(['event_id' => $event_id ]);
+
+        if( is_null( $registree ) )
+        {
+            return response()->json(['Member does\'nt exist.']); 
+        }
+        
+        MemberEvents::create(['event_id' => $event_id, 'member_id' => null, 'type' => 'guest', 'contact_no' => $contact]);
+
+        return response()->json([ "msg" => 'success' ]); 
+        
+    }
 
 }
