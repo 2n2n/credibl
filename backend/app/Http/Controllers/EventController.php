@@ -32,9 +32,9 @@ class EventController extends Controller
     function attendees($id) 
     {
         $attendees = Event::where(['id' => $id]);
-        if( is_null($attendees->first() ) 
+        if( is_null($attendees->first() ) )
         {
-            return response()->json({ 'attendees' => [] });
+            return response()->json([ 'attendees' => [] ]);
         }
         else
         {
