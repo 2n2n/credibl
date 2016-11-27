@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="module.addEvent">
+	<header>
+		<!-- <link rel="stylesheet" type="text/css" href="./plugins/bootstrap/css/bootstrap.min.css"> -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="../public/css/homePage.css" />
+	</header>
+	<body ng-controller="addEventCtrl as main_ctrl">
+
+		<nav class="navbar navbar-light bg-faded">
+			<a class="navbar-brand" href="#">
+				Credibl
+			</a>
+			<ul class="nav navbar-nav">
+				<li class="nav-item active">
+					<a class="nav-link" href="../index.html">Home <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="./event.html">Events</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="./register">Register</a>
+				</li>
+		  	</ul>
+		</nav>
+		
+		<div style="width:40%;margin:auto;">
+			<h2>Add Event</h2>
+			<input type='text' class='form-control' ng-model='main_ctrl.addEventFct.props.title' placeholder='Title'/><br/>
+			<input type='text' class='form-control' ng-model='main_ctrl.addEventFct.props.description' placeholder='Description'/><br/>
+			<input type='text' class='form-control' ng-model='main_ctrl.addEventFct.props.co_host' placeholder='Co Host'/><br/>
+			<input type='text' class='form-control' ng-model='main_ctrl.addEventFct.props.address' placeholder='Address'/><br/>
+			<input type='text' class='form-control' ng-model='main_ctrl.addEventFct.props.event_schedule' placeholder='Event Schedule'/><br/>
+			<input type='submit' class='btn btn-success col-sm-12' value='submit' ng-click='main_ctrl.addEventFct.doAddEvent(main_ctrl.addEventFct.props)'/>
+		</div>
+
+		<!--<script src="./plugins/bootstrap/js/bootstrap.min.js"></script>-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="../plugins/angular/angular.min.js"></script>
+		<script type="text/javascript" src="../public/scripts/modules/module.addEvent.js"></script>
+	</body>
+</html>
